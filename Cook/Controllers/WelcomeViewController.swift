@@ -17,29 +17,22 @@ class WelcomeViewController: UIViewController {
   
   override func viewDidLoad() {
     super.viewDidLoad()
+    setupHideKeyboardOnTap()
     setupSignInButton()
+  }
+  
+  override func viewWillAppear(_ animated: Bool) {
+      super.viewWillAppear(animated)
+      navigationController?.isNavigationBarHidden = true
+  }
+  
+  override func viewWillDisappear(_ animated: Bool) {
+      super.viewWillDisappear(animated)
+      navigationController?.isNavigationBarHidden = false
   }
   
   @IBAction func loginPressed(_ sender: UIButton) {
     performSignInWithEmail()
-  }
-  
-  @IBAction func registerPressed(_ sender: UIButton) {
-    
-//    let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
-//    let vc = storyBoard.instantiateViewController(withIdentifier: "RegisterController")
-//    navigationController?.pushViewController(vc, animated: true)
-//    if let email = emailTextField.text, let password = passwordTextField.text {
-//      Auth.auth().createUser(withEmail: email, password: password) { authResult, error in
-//        if let err = error {
-//          self.showAlert(with: "Error", and: err.localizedDescription)
-//        } else {
-//          let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
-//          let newViewController = storyBoard.instantiateViewController(withIdentifier: "TabBarController")
-//          self.view.window!.rootViewController = newViewController
-//        }
-//      }
-//    }
   }
   
   func performSignInWithEmail() {
@@ -185,3 +178,17 @@ private func sha256(_ input: String) -> String {
 }
 
 
+extension WelcomeViewController {
+    /// Call this once to dismiss open keyboards by tapping anywhere in the view controller
+    func setupHideKeyboardOnTap() {
+        self.view.addGestureRecognizer(self.endEditingRecognizer())
+        self.navigationController?.navigationBar.addGestureRecognizer(self.endEditingRecognizer())
+    }
+
+    /// Dismisses the keyboard from self.view
+    private func endEditingRecognizer() -> UIGestureRecognizer {
+        let tap = UITapGestureRecognizer(target: self.view, action: #selector(self.view.endEditing(_:)))
+        tap.cancelsTouchesInView = false
+        return tap
+    }
+}

@@ -22,7 +22,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Ne-4D-TOT" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4275.36231884058" y="466.74107142857139"/>
+            <point key="canvasLocation" x="3365" y="480"/>
         </scene>
         <!--List Recipes View Controller-->
         <scene sceneID="VBn-Pm-Rb8">
@@ -207,7 +207,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QTm-Wa-ogx" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5481.1594202898559" y="466.74107142857139"/>
+            <point key="canvasLocation" x="4399" y="479"/>
         </scene>
         <!--Welcome View Controller-->
         <scene sceneID="MPq-bj-PcC">
@@ -304,7 +304,6 @@
                                                         <rect key="frame" x="143.5" y="0.0" width="129" height="18"/>
                                                         <state key="normal" title="Создайте аккаунт"/>
                                                         <connections>
-                                                            <action selector="registerPressed:" destination="Vr8-bF-8xD" eventType="touchUpInside" id="4yY-qz-43f"/>
                                                             <segue destination="5Kt-7D-srh" kind="show" id="t2k-nL-YMO"/>
                                                         </connections>
                                                     </button>
@@ -373,6 +372,11 @@
                                         <state key="normal" title="Создать аккаунт">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <integer key="value" value="25"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
                                         <connections>
                                             <action selector="RegisterPressed:" destination="5Kt-7D-srh" eventType="touchUpInside" id="F4P-LZ-v3e"/>
                                         </connections>
@@ -402,7 +406,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6m6-Ne-izW" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1306" y="915"/>
+            <point key="canvasLocation" x="1283" y="873"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="7RE-ed-kqC">
