@@ -31,7 +31,8 @@ class ListRecipesViewController: UIViewController, UITableViewDataSource, UITabl
       print("Sign out")
       let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
       let newViewController = storyBoard.instantiateViewController(withIdentifier: "WelcomeViewController")
-      self.view.window!.rootViewController = newViewController
+      let navigationController = UINavigationController(rootViewController: newViewController)
+      self.view.window?.rootViewController = navigationController
     } catch let signOutError as NSError {
       print ("Error signing out: %@", signOutError)
     }

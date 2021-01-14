@@ -21,24 +21,41 @@ class WelcomeViewController: UIViewController {
   }
   
   @IBAction func loginPressed(_ sender: UIButton) {
-    if let email = emailTextField.text, let password = passwordTextField.text {
-      Auth.auth().signIn(withEmail: email, password: password) { authResult, error in
-        if let e = error {
-          print(e)
-        } else {
-          let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
-          let newViewController = storyBoard.instantiateViewController(withIdentifier: "TabBarController")
-          self.view.window!.rootViewController = newViewController
-        }
-      }
-    }
+    performSignInWithEmail()
   }
   
   @IBAction func registerPressed(_ sender: UIButton) {
+    
+//    let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+//    let vc = storyBoard.instantiateViewController(withIdentifier: "RegisterController")
+//    navigationController?.pushViewController(vc, animated: true)
+//    if let email = emailTextField.text, let password = passwordTextField.text {
+//      Auth.auth().createUser(withEmail: email, password: password) { authResult, error in
+//        if let err = error {
+//          self.showAlert(with: "Error", and: err.localizedDescription)
+//        } else {
+//          let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+//          let newViewController = storyBoard.instantiateViewController(withIdentifier: "TabBarController")
+//          self.view.window!.rootViewController = newViewController
+//        }
+//      }
+//    }
+  }
+  
+  func performSignInWithEmail() {
     if let email = emailTextField.text, let password = passwordTextField.text {
-      Auth.auth().createUser(withEmail: email, password: password) { authResult, error in
-        if let e = error {
-          print(e.localizedDescription)
+      Auth.auth().signIn(withEmail: email, password: password) { authResult, error in
+        if let _ = error {
+          switch error {
+          case .some(let error as NSError) where error.code == AuthErrorCode.wrongPassword.rawValue:
+            Alert.showAlert(with: "Error", and: "Wrong password", sender: self)
+          case .none:
+            if let user = authResult?.user {
+              print(user.uid)
+            }
+          case .some(let error):
+            Alert.showAlert(with: "Error", and: error.localizedDescription, sender: self)
+          }
         } else {
           let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
           let newViewController = storyBoard.instantiateViewController(withIdentifier: "TabBarController")
@@ -56,10 +73,10 @@ class WelcomeViewController: UIViewController {
   }
   
   @objc func handleSignInWithAppleTapped() {
-    performSignIn()
+    performSignInWithApple()
   }
   
-  func performSignIn() {
+  func performSignInWithApple() {
     let request = createAppleIDRequest()
     let autorizationController = ASAuthorizationController(authorizationRequests: [request])
     

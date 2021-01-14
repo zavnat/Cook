@@ -10,6 +10,8 @@
 		7C935C20A50E01D5AD639B62 /* Pods_Cook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0025E94B29BC5DA53689310E /* Pods_Cook.framework */; };
 		840B6CF125AC715F00C1509A /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840B6CF025AC715F00C1509A /* WelcomeViewController.swift */; };
 		843F1FC125A3450300C1C727 /* CookViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843F1FC025A3450300C1C727 /* CookViewController.swift */; };
+		848B100725AF22C000A05CCD /* Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848B100625AF22C000A05CCD /* Alert.swift */; };
+		848B100C25B048DF00A05CCD /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848B100B25B048DF00A05CCD /* RegisterViewController.swift */; };
 		84EF0DCF258BBC4F00D00432 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84EF0DCE258BBC4F00D00432 /* AppDelegate.swift */; };
 		84EF0DD1258BBC4F00D00432 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84EF0DD0258BBC4F00D00432 /* SceneDelegate.swift */; };
 		84EF0DD3258BBC4F00D00432 /* ListRecipesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84EF0DD2258BBC4F00D00432 /* ListRecipesViewController.swift */; };
@@ -28,6 +30,8 @@
 		6168106D886B92C16FE59A89 /* Pods-Cook.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Cook.release.xcconfig"; path = "Target Support Files/Pods-Cook/Pods-Cook.release.xcconfig"; sourceTree = "<group>"; };
 		840B6CF025AC715F00C1509A /* WelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = WelcomeViewController.swift; path = Cook/Controllers/WelcomeViewController.swift; sourceTree = SOURCE_ROOT; };
 		843F1FC025A3450300C1C727 /* CookViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CookViewController.swift; sourceTree = "<group>"; };
+		848B100625AF22C000A05CCD /* Alert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alert.swift; sourceTree = "<group>"; };
+		848B100B25B048DF00A05CCD /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = RegisterViewController.swift; path = Cook/RegisterViewController.swift; sourceTree = SOURCE_ROOT; };
 		84EF0DCB258BBC4F00D00432 /* Cook.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Cook.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		84EF0DCE258BBC4F00D00432 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		84EF0DD0258BBC4F00D00432 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -82,6 +86,14 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
+		848B100525AF22A500A05CCD /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				848B100625AF22C000A05CCD /* Alert.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
 		84EF0DC2258BBC4F00D00432 = {
 			isa = PBXGroup;
 			children = (
@@ -106,6 +118,7 @@
 				84EF0E33259CB90700D00432 /* Cook.entitlements */,
 				84EF0DCE258BBC4F00D00432 /* AppDelegate.swift */,
 				84EF0DD0258BBC4F00D00432 /* SceneDelegate.swift */,
+				848B100525AF22A500A05CCD /* Helpers */,
 				8447A42025AC58810040CDEC /* Model */,
 				84EF0E1B258CC3AB00D00432 /* Controllers */,
 				84EF0DD4258BBC4F00D00432 /* Main.storyboard */,
@@ -120,6 +133,7 @@
 		84EF0E1B258CC3AB00D00432 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				848B100B25B048DF00A05CCD /* RegisterViewController.swift */,
 				840B6CF025AC715F00C1509A /* WelcomeViewController.swift */,
 				84EF0DD2258BBC4F00D00432 /* ListRecipesViewController.swift */,
 				84EF0E2B25922CB800D00432 /* DetailViewController.swift */,
@@ -246,9 +260,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				840B6CF125AC715F00C1509A /* WelcomeViewController.swift in Sources */,
+				848B100C25B048DF00A05CCD /* RegisterViewController.swift in Sources */,
 				84EF0E242590BF2E00D00432 /* RecipeCell.swift in Sources */,
 				84EF0DD3258BBC4F00D00432 /* ListRecipesViewController.swift in Sources */,
 				84EF0E2C25922CB900D00432 /* DetailViewController.swift in Sources */,
+				848B100725AF22C000A05CCD /* Alert.swift in Sources */,
 				84EF0DCF258BBC4F00D00432 /* AppDelegate.swift in Sources */,
 				843F1FC125A3450300C1C727 /* CookViewController.swift in Sources */,
 				84EF0E292590DB8A00D00432 /* Recipe.swift in Sources */,

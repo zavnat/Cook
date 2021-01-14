@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="COv-Hm-tZA">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="cBu-1l-71P">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
@@ -22,7 +22,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Ne-4D-TOT" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1544.9275362318842" y="466.74107142857139"/>
+            <point key="canvasLocation" x="4275.36231884058" y="466.74107142857139"/>
         </scene>
         <!--List Recipes View Controller-->
         <scene sceneID="VBn-Pm-Rb8">
@@ -91,7 +91,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lfG-GL-0hE" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2296" y="-238"/>
+            <point key="canvasLocation" x="4115.9420289855079" y="-238.39285714285714"/>
         </scene>
         <!--Recipe-->
         <scene sceneID="QZA-ax-Mjw">
@@ -172,7 +172,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kgn-jI-oen" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3049" y="-238"/>
+            <point key="canvasLocation" x="4868.115942028986" y="-238.39285714285714"/>
         </scene>
         <!--Adding View Controller-->
         <scene sceneID="DX3-HX-BWA">
@@ -207,7 +207,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QTm-Wa-ogx" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2751" y="467"/>
+            <point key="canvasLocation" x="5481.1594202898559" y="466.74107142857139"/>
         </scene>
         <!--Welcome View Controller-->
         <scene sceneID="MPq-bj-PcC">
@@ -305,6 +305,7 @@
                                                         <state key="normal" title="Создайте аккаунт"/>
                                                         <connections>
                                                             <action selector="registerPressed:" destination="Vr8-bF-8xD" eventType="touchUpInside" id="4yY-qz-43f"/>
+                                                            <segue destination="5Kt-7D-srh" kind="show" id="t2k-nL-YMO"/>
                                                         </connections>
                                                     </button>
                                                 </subviews>
@@ -332,7 +333,76 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Pgt-Jc-GJo" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-535" y="183"/>
+            <point key="canvasLocation" x="1284.0579710144928" y="182.8125"/>
+        </scene>
+        <!--Регистрация-->
+        <scene sceneID="Pok-KP-iYe">
+            <objects>
+                <viewController storyboardIdentifier="RegisterController" id="5Kt-7D-srh" customClass="RegisterViewController" customModule="Cook" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="EWC-SE-ISh">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="1Uz-Gq-t6y">
+                                <rect key="frame" x="0.0" y="88" width="414" height="774"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="wvZ-xu-r63">
+                                        <rect key="frame" x="16" y="8" width="382" height="108"/>
+                                        <subviews>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="IB5-uC-GjS">
+                                                <rect key="frame" x="0.0" y="0.0" width="382" height="50"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="50" id="nZI-tQ-Yoe"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Пароль" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="4yU-3l-lcO">
+                                                <rect key="frame" x="0.0" y="58" width="382" height="50"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
+                                        </subviews>
+                                    </stackView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DmG-39-Zez">
+                                        <rect key="frame" x="16" y="124" width="382" height="50"/>
+                                        <color key="backgroundColor" systemColor="linkColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="1ww-bC-xX5"/>
+                                        </constraints>
+                                        <state key="normal" title="Создать аккаунт">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="RegisterPressed:" destination="5Kt-7D-srh" eventType="touchUpInside" id="F4P-LZ-v3e"/>
+                                        </connections>
+                                    </button>
+                                    <view contentMode="scaleToFill" verticalHuggingPriority="200" translatesAutoresizingMaskIntoConstraints="NO" id="63l-8I-2ZU">
+                                        <rect key="frame" x="16" y="182" width="382" height="584"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                    </view>
+                                </subviews>
+                                <edgeInsets key="layoutMargins" top="8" left="16" bottom="8" right="16"/>
+                            </stackView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="Sie-cb-V0t"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="1Uz-Gq-t6y" firstAttribute="leading" secondItem="Sie-cb-V0t" secondAttribute="leading" id="GNT-f1-dHE"/>
+                            <constraint firstItem="Sie-cb-V0t" firstAttribute="trailing" secondItem="1Uz-Gq-t6y" secondAttribute="trailing" id="QdO-XI-hV4"/>
+                            <constraint firstItem="1Uz-Gq-t6y" firstAttribute="top" secondItem="Sie-cb-V0t" secondAttribute="top" id="j7r-km-bf9"/>
+                            <constraint firstItem="Sie-cb-V0t" firstAttribute="bottom" secondItem="1Uz-Gq-t6y" secondAttribute="bottom" id="zJ5-TO-zby"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Регистрация" id="1tV-In-Oc4"/>
+                    <connections>
+                        <outlet property="emailTextField" destination="IB5-uC-GjS" id="BHN-KQ-ifz"/>
+                        <outlet property="passwordTextField" destination="4yU-3l-lcO" id="qzb-fV-KB8"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="6m6-Ne-izW" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1306" y="915"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="7RE-ed-kqC">
@@ -351,7 +421,7 @@
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bmZ-e7-llT" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="642.02898550724638" y="182.8125"/>
+            <point key="canvasLocation" x="2460.8695652173915" y="182.8125"/>
         </scene>
         <!--MyRecipes-->
         <scene sceneID="aFs-nm-2Al">
@@ -370,25 +440,25 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UkA-29-ZYd" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1544.9275362318842" y="-238.39285714285714"/>
+            <point key="canvasLocation" x="3365.217391304348" y="-238.39285714285714"/>
         </scene>
         <!--Navigation Controller-->
-        <scene sceneID="cMn-xW-Enz">
+        <scene sceneID="ZH3-De-iqG">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="COv-Hm-tZA" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="cBu-1l-71P" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="5my-2l-GTf">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="kf8-Np-0K1">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="Vr8-bF-8xD" kind="relationship" relationship="rootViewController" id="Ol5-XV-8Te"/>
+                        <segue destination="Vr8-bF-8xD" kind="relationship" relationship="rootViewController" id="iZZ-LP-ir2"/>
                     </connections>
                 </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="eNo-8d-6Jf" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="htw-qZ-sVv" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1231.8840579710145" y="182.8125"/>
+            <point key="canvasLocation" x="373.91304347826087" y="182.8125"/>
         </scene>
     </scenes>
     <resources>

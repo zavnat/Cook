@@ -21,11 +21,13 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     if let user = Auth.auth().currentUser {
       print("You're sign in as \(user.uid)")
       initialViewController = storyboard.instantiateViewController(withIdentifier: "TabBarController")
+      self.window?.rootViewController = initialViewController
     } else {
       initialViewController = storyboard.instantiateViewController(withIdentifier: "WelcomeViewController")
-      
+      let navigationController = UINavigationController(rootViewController: initialViewController)
+      self.window?.rootViewController = navigationController
     }
-    self.window?.rootViewController = initialViewController
+
     self.window?.makeKeyAndVisible()
     
     guard let _ = (scene as? UIWindowScene) else { return }
