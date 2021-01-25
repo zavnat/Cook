@@ -12,15 +12,19 @@ class AddingViewController: UIViewController {
   
   let db = Firestore.firestore()
   
-  @IBOutlet weak var textView: UITextView!
+  @IBOutlet weak var nameField: UITextField!
+  @IBOutlet weak var descriptionField: UITextView!
   
   override func viewDidLoad() {
     super.viewDidLoad()
-    
+    descriptionField.layer.borderColor = UIColor(red: 0.9, green: 0.9, blue: 0.9, alpha: 1.0).cgColor
+    descriptionField.layer.borderWidth = 1.0
+    descriptionField.layer.cornerRadius = 5
   }
+
   
   @IBAction func saveButton(_ sender: Any) {
-    if let message = textView.text, textView.text.count > 0, let messageSender = Auth.auth().currentUser?.email {
+    if let message = nameField.text, !message.isEmpty, let messageSender = Auth.auth().currentUser?.email {
       
       db.collection(Auth.auth().currentUser!.email!).addDocument(data: [
         "sender": messageSender,
