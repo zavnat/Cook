@@ -8,16 +8,47 @@
 import UIKit
 import Firebase
 
-class AddingViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, Pr {
+class AddingViewController: UIViewController {
+  
+  @IBOutlet weak var tableView: UITableView!
+  //  let db = Firestore.firestore()
+  var ingredientsList = [String]()
+  
+  override func viewDidLoad() {
+    super.viewDidLoad()
+    tableView.delegate = self
+    tableView.dataSource = self
+  }
+  
   func press() {
-    array.insert("B", at: 0)
+    ingredientsList.insert("B", at: 0)
     tableView.beginUpdates()
-    tableView.insertRows(at: [IndexPath(row: 0, section: 1)], with: .right)
+    tableView.insertRows(at: [IndexPath(row: 0, section: 1)],
+                         with: .right)
     tableView.endUpdates()
   }
   
+  //  @IBAction func saveButton(_ sender: Any) {
+  //    if let message = nameField.text, !message.isEmpty, let messageSender = Auth.auth().currentUser?.email {
+  //
+  //      db.collection(Auth.auth().currentUser!.email!).addDocument(data: [
+  //        "sender": messageSender,
+  //        "recipe": message,
+  //        "date": Date().timeIntervalSince1970
+  //      ]) { err in
+  //        if let err = err {
+  //          print("Error adding document: \(err)")
+  //        } else {
+  //          print("Successfully saved data")
+  //        }
+  //      }
+  //    }
+  //    self.navigationController?.popViewController(animated: true)
+  //  }
   
-  var array = [String]()
+}
+
+extension AddingViewController: UITableViewDelegate, UITableViewDataSource, AddRecipeCellProtocol {
   
   func numberOfSections(in tableView: UITableView) -> Int {
     return 3
@@ -28,7 +59,7 @@ class AddingViewController: UIViewController, UITableViewDelegate, UITableViewDa
     case 0:
       return 1
     case 1:
-      return array.count
+      return ingredientsList.count
     case 2:
       return 1
     default:
@@ -49,64 +80,30 @@ class AddingViewController: UIViewController, UITableViewDelegate, UITableViewDa
     case 2:
       let cell = tableView.dequeueReusableCell(withIdentifier: "AddRecipeCell", for:
                                                 indexPath) as! AddRecipeCell
-      cell.delegate = self
+      cell.cellDelegate = self
       return cell
     default:
       let cell = tableView.dequeueReusableCell(withIdentifier: "AddRecipeCell", for:
                                                 indexPath) as! AddRecipeCell
-      cell.delegate = self
+      cell.cellDelegate = self
       return cell
     }
   }
   
-//  func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-//    switch indexPath.section {
-//    case 0:
-//      return 40
-//    case 1:
-//      return 40
-//    default:
-//      return 100
-//    }
-//  }
-
-  
-  
-//  let db = Firestore.firestore()
-//  
-  @IBOutlet weak var tableView: UITableView!
-  //  @IBOutlet weak var nameField: UITextField!
-//  @IBOutlet weak var descriptionField: UITextView!
-//  
-  override func viewDidLoad() {
-    super.viewDidLoad()
-    tableView.delegate = self
-    tableView.dataSource = self
-    
-//    self.tableView.rowHeight = UITableView.automaticDimension
-//    self.tableView.estimatedRowHeight = 108.0
-//    descriptionField.layer.borderColor = UIColor(red: 0.9, green: 0.9, blue: 0.9, alpha: 1.0).cgColor
-//    descriptionField.layer.borderWidth = 1.0
-//    descriptionField.layer.cornerRadius = 5
+  func updateHeightOfRow(_ cell: AddRecipeCell, _ textView: UITextView) {
+    let size = textView.bounds.size
+    let newSize = tableView.sizeThatFits(CGSize(width: size.width,
+                                                height: CGFloat.greatestFiniteMagnitude))
+    if size.height != newSize.height {
+      UIView.setAnimationsEnabled(false)
+      tableView?.beginUpdates()
+      tableView?.endUpdates()
+      UIView.setAnimationsEnabled(true)
+      if let thisIndexPath = tableView.indexPath(for: cell) {
+        tableView.scrollToRow(at: thisIndexPath, at: .bottom,
+                              animated: false)
+      }
+    }
   }
-
-  
-//  @IBAction func saveButton(_ sender: Any) {
-//    if let message = nameField.text, !message.isEmpty, let messageSender = Auth.auth().currentUser?.email {
-//
-//      db.collection(Auth.auth().currentUser!.email!).addDocument(data: [
-//        "sender": messageSender,
-//        "recipe": message,
-//        "date": Date().timeIntervalSince1970
-//      ]) { err in
-//        if let err = err {
-//          print("Error adding document: \(err)")
-//        } else {
-//          print("Successfully saved data")
-//        }
-//      }
-//    }
-//    self.navigationController?.popViewController(animated: true)
-//  }
   
 }
