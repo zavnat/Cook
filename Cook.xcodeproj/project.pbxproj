@@ -139,7 +139,6 @@
 		84EF0E1B258CC3AB00D00432 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				84991FCF25C01D0900E9C321 /* AddInfoCell.swift */,
 				848B100B25B048DF00A05CCD /* RegisterViewController.swift */,
 				840B6CF025AC715F00C1509A /* WelcomeViewController.swift */,
 				84EF0DD2258BBC4F00D00432 /* ListRecipesViewController.swift */,
@@ -147,6 +146,7 @@
 				84EF0DE4258BC51100D00432 /* AddingViewController.swift */,
 				843F1FC025A3450300C1C727 /* CookViewController.swift */,
 				84EF0E222590BF2E00D00432 /* RecipeCell.swift */,
+				84991FCF25C01D0900E9C321 /* AddInfoCell.swift */,
 				84991FD225C01D8900E9C321 /* AddListIngredientsCell.swift */,
 				84991FD625C01DC900E9C321 /* AddRecipeCell.swift */,
 			);

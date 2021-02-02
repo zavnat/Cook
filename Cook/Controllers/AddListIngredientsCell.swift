@@ -9,6 +9,9 @@ import UIKit
 
 class AddListIngredientsCell: UITableViewCell {
 
+    @IBOutlet weak var nameLabel: UILabel!
+    var indexPath: IndexPath!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
     }
@@ -17,4 +20,7 @@ class AddListIngredientsCell: UITableViewCell {
         super.setSelected(selected, animated: animated)
     }
 
+    @IBAction func deleteButtonPressed(_ sender: UIButton) {
+        
+    }
 }
