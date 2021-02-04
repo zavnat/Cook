@@ -10,5 +10,4 @@ import Foundation
 struct Recipe {
   let name: String
   let id: String
-//  let sender: String
 }

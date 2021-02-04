@@ -26,6 +26,8 @@
 		84EF0E242590BF2E00D00432 /* RecipeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84EF0E222590BF2E00D00432 /* RecipeCell.swift */; };
 		84EF0E292590DB8A00D00432 /* Recipe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84EF0E282590DB8A00D00432 /* Recipe.swift */; };
 		84EF0E2C25922CB900D00432 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84EF0E2B25922CB800D00432 /* DetailViewController.swift */; };
+		8D15AA7B25C97D92004922F3 /* PickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D15AA7A25C97D92004922F3 /* PickerViewController.swift */; };
+		8D15AA9B25CC27E0004922F3 /* PickerType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D15AA9A25CC27E0004922F3 /* PickerType.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,8 +36,8 @@
 		840B6CF025AC715F00C1509A /* WelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = WelcomeViewController.swift; path = Cook/Controllers/WelcomeViewController.swift; sourceTree = SOURCE_ROOT; };
 		843F1FC025A3450300C1C727 /* CookViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CookViewController.swift; sourceTree = "<group>"; };
 		848B100625AF22C000A05CCD /* Alert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alert.swift; sourceTree = "<group>"; };
-		848B100B25B048DF00A05CCD /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = RegisterViewController.swift; path = Cook/RegisterViewController.swift; sourceTree = SOURCE_ROOT; };
-		84991FCF25C01D0900E9C321 /* AddInfoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AddInfoCell.swift; path = Cook/AddInfoCell.swift; sourceTree = SOURCE_ROOT; };
+		848B100B25B048DF00A05CCD /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = RegisterViewController.swift; path = Cook/Controllers/RegisterViewController.swift; sourceTree = SOURCE_ROOT; };
+		84991FCF25C01D0900E9C321 /* AddInfoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AddInfoCell.swift; path = Cook/View/AddInfoCell.swift; sourceTree = SOURCE_ROOT; };
 		84991FD225C01D8900E9C321 /* AddListIngredientsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddListIngredientsCell.swift; sourceTree = "<group>"; };
 		84991FD625C01DC900E9C321 /* AddRecipeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddRecipeCell.swift; sourceTree = "<group>"; };
 		84EF0DCB258BBC4F00D00432 /* Cook.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Cook.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -52,6 +54,8 @@
 		84EF0E282590DB8A00D00432 /* Recipe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Recipe.swift; sourceTree = "<group>"; };
 		84EF0E2B25922CB800D00432 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		84EF0E33259CB90700D00432 /* Cook.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Cook.entitlements; sourceTree = "<group>"; };
+		8D15AA7A25C97D92004922F3 /* PickerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PickerViewController.swift; path = Cook/Controllers/PickerViewController.swift; sourceTree = SOURCE_ROOT; };
+		8D15AA9A25CC27E0004922F3 /* PickerType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickerType.swift; sourceTree = "<group>"; };
 		A933FD642F9239730EB19947 /* Pods-Cook.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Cook.debug.xcconfig"; path = "Target Support Files/Pods-Cook/Pods-Cook.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -96,6 +100,7 @@
 			isa = PBXGroup;
 			children = (
 				848B100625AF22C000A05CCD /* Alert.swift */,
+				8D15AA9A25CC27E0004922F3 /* PickerType.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -125,6 +130,7 @@
 				84EF0DCE258BBC4F00D00432 /* AppDelegate.swift */,
 				84EF0DD0258BBC4F00D00432 /* SceneDelegate.swift */,
 				848B100525AF22A500A05CCD /* Helpers */,
+				8D15AA9825CC25EE004922F3 /* View */,
 				8447A42025AC58810040CDEC /* Model */,
 				84EF0E1B258CC3AB00D00432 /* Controllers */,
 				84EF0DD4258BBC4F00D00432 /* Main.storyboard */,
@@ -139,18 +145,26 @@
 		84EF0E1B258CC3AB00D00432 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				8D15AA7A25C97D92004922F3 /* PickerViewController.swift */,
 				848B100B25B048DF00A05CCD /* RegisterViewController.swift */,
 				840B6CF025AC715F00C1509A /* WelcomeViewController.swift */,
 				84EF0DD2258BBC4F00D00432 /* ListRecipesViewController.swift */,
 				84EF0E2B25922CB800D00432 /* DetailViewController.swift */,
 				84EF0DE4258BC51100D00432 /* AddingViewController.swift */,
 				843F1FC025A3450300C1C727 /* CookViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		8D15AA9825CC25EE004922F3 /* View */ = {
+			isa = PBXGroup;
+			children = (
 				84EF0E222590BF2E00D00432 /* RecipeCell.swift */,
 				84991FCF25C01D0900E9C321 /* AddInfoCell.swift */,
 				84991FD225C01D8900E9C321 /* AddListIngredientsCell.swift */,
 				84991FD625C01DC900E9C321 /* AddRecipeCell.swift */,
 			);
-			path = Controllers;
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -275,9 +289,11 @@
 				84EF0E2C25922CB900D00432 /* DetailViewController.swift in Sources */,
 				84991FD025C01D0900E9C321 /* AddInfoCell.swift in Sources */,
 				848B100725AF22C000A05CCD /* Alert.swift in Sources */,
+				8D15AA7B25C97D92004922F3 /* PickerViewController.swift in Sources */,
 				84EF0DCF258BBC4F00D00432 /* AppDelegate.swift in Sources */,
 				843F1FC125A3450300C1C727 /* CookViewController.swift in Sources */,
 				84991FD325C01D8900E9C321 /* AddListIngredientsCell.swift in Sources */,
+				8D15AA9B25CC27E0004922F3 /* PickerType.swift in Sources */,
 				84EF0E292590DB8A00D00432 /* Recipe.swift in Sources */,
 				84991FD725C01DC900E9C321 /* AddRecipeCell.swift in Sources */,
 				84EF0DD1258BBC4F00D00432 /* SceneDelegate.swift in Sources */,

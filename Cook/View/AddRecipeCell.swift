@@ -10,6 +10,7 @@ import UIKit
 protocol AddRecipeCellProtocol: class {
     func createNewIngredient(_ text: String)
     func updateHeightOfRow(_ cell: AddRecipeCell, _ textView: UITextView)
+    func openBottomSheet(type: PickerType)
 }
 
 class AddRecipeCell: UITableViewCell {
@@ -18,6 +19,8 @@ class AddRecipeCell: UITableViewCell {
     static var indexPath: IndexPath!
     @IBOutlet weak var textView: UITextView!
     @IBOutlet weak var engredientField: UITextField!
+    @IBOutlet weak var servingsButton: UIButton!
+    @IBOutlet weak var cookTimeButton: UIButton!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -30,6 +33,13 @@ class AddRecipeCell: UITableViewCell {
         super.setSelected(selected, animated: animated)
     }
     
+    @IBAction func setPrepareTime(_ sender: UIButton) {
+        cellDelegate?.openBottomSheet(type: .prepareTime)
+    }
+    @IBAction func setCookTime(_ sender: UIButton) {
+        cellDelegate?.openBottomSheet(type: .cookTime)
+    }
+    
     func settingsTextView() {
         textView.layer.borderColor = UIColor(red: 0.9, green: 0.9, blue: 0.9, alpha: 1.0).cgColor
         textView.layer.borderWidth = 1.0
@@ -39,7 +49,6 @@ class AddRecipeCell: UITableViewCell {
 }
 
 extension AddRecipeCell: UITextViewDelegate, UITextFieldDelegate {
-    
     func textViewDidChange(_ textView: UITextView) {
         if let deletate = cellDelegate {
             deletate.updateHeightOfRow(self, textView)

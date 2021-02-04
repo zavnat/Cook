@@ -193,28 +193,26 @@
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="122"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="YfD-GF-RS2">
-                                                    <rect key="frame" x="20" y="11" width="374" height="100"/>
-                                                    <subviews>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Название" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="E8Z-7O-2Pq">
-                                                            <rect key="frame" x="0.0" y="0.0" width="374" height="46"/>
-                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                            <nil key="textColor"/>
-                                                            <nil key="highlightedColor"/>
-                                                        </label>
-                                                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Супер имя для моего рецепта" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ROo-vJ-61W">
-                                                            <rect key="frame" x="0.0" y="54" width="374" height="46"/>
-                                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                            <textInputTraits key="textInputTraits"/>
-                                                        </textField>
-                                                    </subviews>
-                                                </stackView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Название" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="E8Z-7O-2Pq">
+                                                    <rect key="frame" x="10" y="20" width="394" height="20.5"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Супер имя для моего рецепта" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ROo-vJ-61W">
+                                                    <rect key="frame" x="10" y="50.5" width="394" height="66.5"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <textInputTraits key="textInputTraits"/>
+                                                </textField>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstAttribute="trailingMargin" secondItem="YfD-GF-RS2" secondAttribute="trailing" id="Ila-6a-d7M"/>
-                                                <constraint firstItem="YfD-GF-RS2" firstAttribute="top" secondItem="cop-29-aV0" secondAttribute="topMargin" id="KYS-Wf-emC"/>
-                                                <constraint firstAttribute="bottomMargin" secondItem="YfD-GF-RS2" secondAttribute="bottom" id="Khp-TS-5RM"/>
-                                                <constraint firstItem="YfD-GF-RS2" firstAttribute="leading" secondItem="cop-29-aV0" secondAttribute="leadingMargin" id="pId-DE-YNS"/>
+                                                <constraint firstItem="E8Z-7O-2Pq" firstAttribute="top" secondItem="cop-29-aV0" secondAttribute="top" constant="20" id="CzC-1E-E94"/>
+                                                <constraint firstAttribute="bottom" secondItem="ROo-vJ-61W" secondAttribute="bottom" constant="5" id="GHA-ns-T7L"/>
+                                                <constraint firstItem="E8Z-7O-2Pq" firstAttribute="leading" secondItem="cop-29-aV0" secondAttribute="leading" constant="10" id="GNP-gi-NMJ"/>
+                                                <constraint firstAttribute="trailing" secondItem="E8Z-7O-2Pq" secondAttribute="trailing" constant="10" id="U0J-dk-O0q"/>
+                                                <constraint firstItem="ROo-vJ-61W" firstAttribute="top" secondItem="E8Z-7O-2Pq" secondAttribute="bottom" constant="10" id="Wfs-Zi-nVi"/>
+                                                <constraint firstAttribute="trailing" secondItem="ROo-vJ-61W" secondAttribute="trailing" constant="10" id="us7-i5-3bU"/>
+                                                <constraint firstItem="ROo-vJ-61W" firstAttribute="leading" secondItem="cop-29-aV0" secondAttribute="leading" constant="10" id="xCl-ud-AMf"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
@@ -291,7 +289,7 @@
                                                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                                 </textView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Время подготовки" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Yah-4t-0Ch">
-                                                    <rect key="frame" x="10" y="245.5" width="394" height="20.5"/>
+                                                    <rect key="frame" x="10" y="255.5" width="394" height="20.5"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -302,15 +300,31 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FCd-FM-284">
+                                                    <rect key="frame" x="318" y="210" width="69" height="30"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <state key="normal" title="Добавить"/>
+                                                    <connections>
+                                                        <action selector="setPrepareTime:" destination="iZj-eK-BA5" eventType="touchUpInside" id="WlF-sW-Zzg"/>
+                                                    </connections>
+                                                </button>
+                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jAj-dJ-KpG">
+                                                    <rect key="frame" x="318" y="250" width="69" height="30"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <state key="normal" title="Добавить"/>
+                                                    <connections>
+                                                        <action selector="setCookTime:" destination="iZj-eK-BA5" eventType="touchUpInside" id="TBR-RJ-J1H"/>
+                                                    </connections>
+                                                </button>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="Rdi-ER-3n8" firstAttribute="leading" secondItem="4li-6M-tE9" secondAttribute="leading" constant="10" id="2Au-mh-wvg"/>
                                                 <constraint firstAttribute="trailing" secondItem="Rdi-ER-3n8" secondAttribute="trailing" constant="10" id="CVA-gx-0f7"/>
+                                                <constraint firstAttribute="bottom" secondItem="Yah-4t-0Ch" secondAttribute="bottom" constant="10" id="HUK-vP-d2c"/>
                                                 <constraint firstItem="Yah-4t-0Ch" firstAttribute="leading" secondItem="4li-6M-tE9" secondAttribute="leading" constant="10" id="Ieh-6L-hnE"/>
                                                 <constraint firstAttribute="trailing" secondItem="AVC-Hf-vgf" secondAttribute="trailing" constant="10" id="KAS-eF-hpI"/>
-                                                <constraint firstItem="Yah-4t-0Ch" firstAttribute="top" secondItem="vVK-co-KUv" secondAttribute="bottom" constant="10" id="MdW-Jo-gSq"/>
+                                                <constraint firstItem="Yah-4t-0Ch" firstAttribute="top" secondItem="vVK-co-KUv" secondAttribute="bottom" constant="20" id="MdW-Jo-gSq"/>
                                                 <constraint firstItem="7ks-A8-E03" firstAttribute="leading" secondItem="4li-6M-tE9" secondAttribute="leading" constant="10" id="Nl2-Tw-Uql"/>
-                                                <constraint firstAttribute="bottom" secondItem="Yah-4t-0Ch" secondAttribute="bottom" constant="20" id="QmM-vo-x07"/>
                                                 <constraint firstItem="ZOq-az-Q6r" firstAttribute="leading" secondItem="4li-6M-tE9" secondAttribute="leading" constant="10" id="RO1-BZ-fdf"/>
                                                 <constraint firstItem="vVK-co-KUv" firstAttribute="leading" secondItem="4li-6M-tE9" secondAttribute="leading" constant="10" id="XBB-Vn-XG9"/>
                                                 <constraint firstItem="AVC-Hf-vgf" firstAttribute="top" secondItem="7ks-A8-E03" secondAttribute="bottom" constant="10" id="YWo-Gm-CBg"/>
@@ -326,7 +340,9 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
+                                            <outlet property="cookTimeButton" destination="jAj-dJ-KpG" id="HMD-9P-5wH"/>
                                             <outlet property="engredientField" destination="AVC-Hf-vgf" id="F31-3v-PaS"/>
+                                            <outlet property="servingsButton" destination="FCd-FM-284" id="gGW-NG-wpf"/>
                                             <outlet property="textView" destination="Rdi-ER-3n8" id="1MF-bv-Y8Z"/>
                                         </connections>
                                     </tableViewCell>
@@ -356,6 +372,64 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Tmq-CQ-zBs" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="5114.4927536231889" y="489.50892857142856"/>
+        </scene>
+        <!--Picker View Controller-->
+        <scene sceneID="1Or-Dn-ssx">
+            <objects>
+                <viewController storyboardIdentifier="PickerControllerViewController" id="ldF-pU-G4N" customClass="PickerViewController" customModule="Cook" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="sXo-ng-abp">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cc5-dU-jvI">
+                                <rect key="frame" x="20" y="64" width="374" height="22"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zne-x8-8AM">
+                                <rect key="frame" x="144" y="352" width="126" height="40"/>
+                                <color key="backgroundColor" red="0.1306751072" green="0.52150911089999996" blue="0.96679383519999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="126" id="IWf-00-wci"/>
+                                    <constraint firstAttribute="height" constant="40" id="uSQ-h2-Qnt"/>
+                                </constraints>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" title="Готово"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="doneButtonPressed:" destination="ldF-pU-G4N" eventType="touchUpInside" id="eWj-9S-YhA"/>
+                                </connections>
+                            </button>
+                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9Ju-Na-cJw">
+                                <rect key="frame" x="0.0" y="106" width="414" height="216"/>
+                            </pickerView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="PXO-oL-GWt"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="9Ju-Na-cJw" firstAttribute="leading" secondItem="sXo-ng-abp" secondAttribute="leading" id="D5I-fQ-92t"/>
+                            <constraint firstItem="zne-x8-8AM" firstAttribute="centerX" secondItem="sXo-ng-abp" secondAttribute="centerX" id="LxM-Ju-mvJ"/>
+                            <constraint firstItem="9Ju-Na-cJw" firstAttribute="top" secondItem="Cc5-dU-jvI" secondAttribute="bottom" constant="20" id="P2N-62-UPO"/>
+                            <constraint firstItem="Cc5-dU-jvI" firstAttribute="leading" secondItem="PXO-oL-GWt" secondAttribute="leading" constant="20" id="WxD-0N-Rxk"/>
+                            <constraint firstItem="Cc5-dU-jvI" firstAttribute="top" secondItem="PXO-oL-GWt" secondAttribute="top" constant="20" id="Yg5-cs-RvH"/>
+                            <constraint firstItem="zne-x8-8AM" firstAttribute="top" secondItem="9Ju-Na-cJw" secondAttribute="bottom" constant="30" id="gBA-GJ-Aoo"/>
+                            <constraint firstItem="9Ju-Na-cJw" firstAttribute="trailing" secondItem="sXo-ng-abp" secondAttribute="trailing" id="r42-ih-ZEX"/>
+                            <constraint firstItem="PXO-oL-GWt" firstAttribute="trailing" secondItem="Cc5-dU-jvI" secondAttribute="trailing" constant="20" id="xil-pd-E6v"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="label" destination="Cc5-dU-jvI" id="ZXr-RE-Ccu"/>
+                        <outlet property="picker" destination="9Ju-Na-cJw" id="baX-AF-zzZ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="TVV-lG-I3a" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="5831.884057971015" y="848.4375"/>
         </scene>
         <!--Welcome View Controller-->
         <scene sceneID="MPq-bj-PcC">
@@ -433,23 +507,23 @@
                                         <edgeInsets key="layoutMargins" top="8" left="16" bottom="8" right="16"/>
                                     </stackView>
                                     <view contentMode="scaleToFill" verticalHuggingPriority="200" translatesAutoresizingMaskIntoConstraints="NO" id="o6M-MV-d9e">
-                                        <rect key="frame" x="0.0" y="526" width="414" height="222"/>
+                                        <rect key="frame" x="0.0" y="526" width="414" height="210"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                     </view>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="hoZ-DZ-T86">
-                                        <rect key="frame" x="0.0" y="756" width="414" height="18"/>
+                                        <rect key="frame" x="0.0" y="744" width="414" height="30"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="0U2-Yd-NYd">
-                                                <rect key="frame" x="71" y="0.0" width="272.5" height="18"/>
+                                                <rect key="frame" x="71" y="0.0" width="272.5" height="30"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Пока нет аккаунта?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fei-GP-Bg3">
-                                                        <rect key="frame" x="0.0" y="0.0" width="139.5" height="18"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="139.5" height="30"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wbf-lO-i4H">
-                                                        <rect key="frame" x="143.5" y="0.0" width="129" height="18"/>
+                                                        <rect key="frame" x="143.5" y="0.0" width="129" height="30"/>
                                                         <state key="normal" title="Создайте аккаунт"/>
                                                         <connections>
                                                             <segue destination="5Kt-7D-srh" kind="show" id="t2k-nL-YMO"/>

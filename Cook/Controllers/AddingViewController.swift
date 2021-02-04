@@ -7,6 +7,7 @@
 
 import UIKit
 import Firebase
+import FittedSheets
 
 class AddingViewController: UIViewController {
     
@@ -18,6 +19,7 @@ class AddingViewController: UIViewController {
         super.viewDidLoad()
         tableView.delegate = self
         tableView.dataSource = self
+        
     }
     
     @IBAction func saveButtonPressed(_ sender: UIBarButtonItem) {
@@ -47,7 +49,6 @@ class AddingViewController: UIViewController {
         if let resipeName = name, let recipeText = recipe, let _ = Auth.auth().currentUser?.email {
             
             db.collection(Auth.auth().currentUser!.email!).addDocument(data: [
-                //                "sender": messageSender,
                 "recipeName": resipeName,
                 "recipe": recipeText,
                 "ingredients": ingredients,
@@ -138,5 +139,36 @@ extension AddingViewController: UITableViewDelegate, UITableViewDataSource, AddR
         tableView.endUpdates()
     }
     
-}
+    func openBottomSheet(type: PickerType) {
 
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let optionVC = storyboard.instantiateViewController(withIdentifier: "PickerControllerViewController") as! PickerViewController
+        optionVC.pickerType = type
+        let sheetController = SheetViewController(
+            controller: optionVC,
+            sizes: [.percent(0.5)])
+        sheetController.overlayColor = UIColor.gray.withAlphaComponent(0.5)
+        sheetController.cornerRadius = 25
+        self.present(sheetController, animated: false, completion: {})
+        
+        
+        optionVC.didSelectOptions { (selectedString) in
+           
+            let cell = self.tableView.cellForRow(at: AddRecipeCell.indexPath) as! AddRecipeCell
+            guard let result = selectedString else {
+                sheetController.dismiss(animated: true, completion: nil)
+                return
+            }
+            switch type {
+            case .cookTime:
+                cell.cookTimeButton.setTitle(result , for: .normal)
+            case .prepareTime:
+                cell.servingsButton.setTitle(result , for: .normal)
+            default:
+                return
+            }
+            
+            sheetController.dismiss(animated: true, completion: nil)
+        }
+    }
+}
