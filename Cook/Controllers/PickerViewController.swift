@@ -25,18 +25,47 @@ class PickerViewController: UIViewController {
         super.viewDidLoad()
         picker.delegate = self
         picker.dataSource = self
+        pickerHandler()
+    }
+    
+    func pickerHandler() {
+        
+        switch pickerType {
+        case .prepareTime:
+            let font = UIFont.systemFont(ofSize: 20.0)
+            let fontSize: CGFloat = font.pointSize
+            let componentWidth: CGFloat = self.view.frame.width / CGFloat(picker.numberOfComponents)
+            let y = (picker.frame.size.height / 2) - (fontSize / 2)
+            
+            let label1 = UILabel(frame: CGRect(x: componentWidth * 0.65, y: y, width: componentWidth * 0.4, height: fontSize))
+            label1.font = font
+            label1.textAlignment = .left
+            label1.text = "hours"
+            label1.textColor = UIColor.lightGray
+            picker.addSubview(label1)
+            
+            let label2 = UILabel(frame: CGRect(x: componentWidth * 1.65, y: y, width: componentWidth * 0.4, height: fontSize))
+            label2.font = font
+            label2.textAlignment = .left
+            label2.text = "min"
+            label2.textColor = UIColor.lightGray
+            picker.addSubview(label2)
+        default:
+            return
+        }
+        
     }
     
     @IBAction func doneButtonPressed(_ sender: UIButton) {
         
         switch pickerType {
         case .prepareTime:
-            if picker.selectedRow(inComponent: 0) != 0 && picker.selectedRow(inComponent: 2) != 0 {
+            if picker.selectedRow(inComponent: 0) != 0 && picker.selectedRow(inComponent: 1) != 0 {
                 pickerResult = "\(picker.selectedRow(inComponent: 0))h " +
                     "\(picker.selectedRow(inComponent: 2))m "
-            } else if picker.selectedRow(inComponent: 0) == 0 && picker.selectedRow(inComponent: 2) != 0 {
-                pickerResult = "\(picker.selectedRow(inComponent: 2))m "
-            } else if picker.selectedRow(inComponent: 2) == 0 && picker.selectedRow(inComponent: 0) != 0{
+            } else if picker.selectedRow(inComponent: 0) == 0 && picker.selectedRow(inComponent: 1) != 0 {
+                pickerResult = "\(picker.selectedRow(inComponent: 1))m "
+            } else if picker.selectedRow(inComponent: 1) == 0 && picker.selectedRow(inComponent: 0) != 0{
                 pickerResult = "\(picker.selectedRow(inComponent: 0))h "
             }
         case .cookTime:
@@ -59,7 +88,7 @@ extension PickerViewController: UIPickerViewDelegate, UIPickerViewDataSource {
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         switch pickerType {
         case .prepareTime:
-            return 4
+            return 2
         case .cookTime:
             return 1
         default:
@@ -75,11 +104,7 @@ extension PickerViewController: UIPickerViewDelegate, UIPickerViewDataSource {
             case 0:
                 return 24
             case 1:
-                return 1
-            case 2:
                 return 60
-            case 3:
-                return 1
             default:
                 return 1
             }
@@ -99,11 +124,9 @@ extension PickerViewController: UIPickerViewDelegate, UIPickerViewDataSource {
         case 0:
             return String(row)
         case 1:
-            return "hour"
-        case 2:
             return String(row)
         default:
-            return "min"
+            return "_"
             }
         case .cookTime:
             return servingsCount[row]
