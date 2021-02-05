@@ -26,6 +26,8 @@ class AddingViewController: UIViewController {
         let sections = numberOfSections(in: tableView)
         var name: String?
         var recipe: String?
+        var hour: String?
+        var servings: String?
         
         for num in 0..<sections {
             switch num {
@@ -37,20 +39,24 @@ class AddingViewController: UIViewController {
             case 2:
                 let cell = tableView.cellForRow(at: AddRecipeCell.indexPath) as! AddRecipeCell
                 recipe = cell.textView.text
+                hour = cell.cookTimeButton.currentTitle
+                servings = cell.servingsButton.currentTitle
             default:
                 return
             }
         }
-        saveRecipeData(name, ingredients: ingredientsList, recipe: recipe)
+        saveRecipeData(name, ingredients: ingredientsList, recipe: recipe, hour: hour, servings: servings)
     }
     
-    func saveRecipeData(_ name: String?, ingredients: [String], recipe: String?) {
+    func saveRecipeData(_ name: String?, ingredients: [String], recipe: String?, hour: String?, servings: String?) {
         if let resipeName = name, let recipeText = recipe, let _ = Auth.auth().currentUser?.email {
             
             db.collection(Auth.auth().currentUser!.email!).addDocument(data: [
                 "recipeName": resipeName,
                 "recipe": recipeText,
                 "ingredients": ingredients,
+                "hour": hour ?? "",
+                "servings": servings ?? "",
                 "date": Date().timeIntervalSince1970
             ]) { err in
                 if let err = err {

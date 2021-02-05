@@ -51,7 +51,7 @@ class ListRecipesViewController: UIViewController, UITableViewDataSource, UITabl
                         for doc in snapshotDocuments {
                             let id = doc.documentID
                             let data = doc.data()
-                            if let recipe = data["recipe"] as? String {
+                            if let recipe = data["recipeName"] as? String {
                                 let newRecipe = Recipe(name: recipe, id: id)
                                 self.recipes.append(newRecipe)
                                 
