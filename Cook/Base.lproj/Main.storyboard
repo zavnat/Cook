@@ -271,31 +271,31 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Добавить ингредиент" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="AVC-Hf-vgf">
-                                                    <rect key="frame" x="10" y="50.5" width="394" height="41"/>
+                                                    <rect key="frame" x="10" y="50.5" width="394" height="40.5"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits"/>
                                                 </textField>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Инструкции" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZOq-az-Q6r">
-                                                    <rect key="frame" x="10" y="111.5" width="394" height="20.5"/>
+                                                    <rect key="frame" x="10" y="111" width="394" height="20.5"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" verticalHuggingPriority="251" scrollEnabled="NO" text="Рецепт" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Rdi-ER-3n8">
-                                                    <rect key="frame" x="10" y="142" width="394" height="33"/>
+                                                    <rect key="frame" x="10" y="141.5" width="394" height="33"/>
                                                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                     <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                                 </textView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Время подготовки" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Yah-4t-0Ch">
-                                                    <rect key="frame" x="10" y="255.5" width="394" height="20.5"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Количество порций" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Yah-4t-0Ch">
+                                                    <rect key="frame" x="10" y="255" width="394" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Время приготовления" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vVK-co-KUv">
-                                                    <rect key="frame" x="10" y="215" width="394" height="20.5"/>
+                                                    <rect key="frame" x="10" y="214.5" width="394" height="20.5"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -305,7 +305,7 @@
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <state key="normal" title="Добавить"/>
                                                     <connections>
-                                                        <action selector="setPrepareTime:" destination="iZj-eK-BA5" eventType="touchUpInside" id="WlF-sW-Zzg"/>
+                                                        <action selector="setCookTime:" destination="iZj-eK-BA5" eventType="touchUpInside" id="tsR-Ql-XRb"/>
                                                     </connections>
                                                 </button>
                                                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jAj-dJ-KpG">
@@ -313,7 +313,7 @@
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <state key="normal" title="Добавить"/>
                                                     <connections>
-                                                        <action selector="setCookTime:" destination="iZj-eK-BA5" eventType="touchUpInside" id="TBR-RJ-J1H"/>
+                                                        <action selector="setServings:" destination="iZj-eK-BA5" eventType="touchUpInside" id="mQP-kM-dJp"/>
                                                     </connections>
                                                 </button>
                                             </subviews>
@@ -340,9 +340,9 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <outlet property="cookTimeButton" destination="jAj-dJ-KpG" id="HMD-9P-5wH"/>
+                                            <outlet property="cookTimeButton" destination="FCd-FM-284" id="gGW-NG-wpf"/>
                                             <outlet property="engredientField" destination="AVC-Hf-vgf" id="F31-3v-PaS"/>
-                                            <outlet property="servingsButton" destination="FCd-FM-284" id="gGW-NG-wpf"/>
+                                            <outlet property="servingsButton" destination="jAj-dJ-KpG" id="HMD-9P-5wH"/>
                                             <outlet property="textView" destination="Rdi-ER-3n8" id="1MF-bv-Y8Z"/>
                                         </connections>
                                     </tableViewCell>

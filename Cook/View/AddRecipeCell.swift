@@ -19,8 +19,8 @@ class AddRecipeCell: UITableViewCell {
     static var indexPath: IndexPath!
     @IBOutlet weak var textView: UITextView!
     @IBOutlet weak var engredientField: UITextField!
-    @IBOutlet weak var servingsButton: UIButton!
     @IBOutlet weak var cookTimeButton: UIButton!
+    @IBOutlet weak var servingsButton: UIButton!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -33,11 +33,11 @@ class AddRecipeCell: UITableViewCell {
         super.setSelected(selected, animated: animated)
     }
     
-    @IBAction func setPrepareTime(_ sender: UIButton) {
-        cellDelegate?.openBottomSheet(type: .prepareTime)
-    }
     @IBAction func setCookTime(_ sender: UIButton) {
         cellDelegate?.openBottomSheet(type: .cookTime)
+    }
+    @IBAction func setServings(_ sender: UIButton) {
+        cellDelegate?.openBottomSheet(type: .servings)
     }
     
     func settingsTextView() {

@@ -19,7 +19,6 @@ class AddingViewController: UIViewController {
         super.viewDidLoad()
         tableView.delegate = self
         tableView.dataSource = self
-        
     }
     
     @IBAction func saveButtonPressed(_ sender: UIBarButtonItem) {
@@ -152,23 +151,26 @@ extension AddingViewController: UITableViewDelegate, UITableViewDataSource, AddR
         self.present(sheetController, animated: false, completion: {})
         
         
-        optionVC.didSelectOptions { (selectedString) in
+        optionVC.didSelectOptions { selectedString in
            
             let cell = self.tableView.cellForRow(at: AddRecipeCell.indexPath) as! AddRecipeCell
+    
             guard let result = selectedString else {
+                cell.cookTimeButton.setTitle("Добавить", for: .normal)
                 sheetController.dismiss(animated: true, completion: nil)
                 return
             }
+
             switch type {
             case .cookTime:
-                cell.cookTimeButton.setTitle(result , for: .normal)
-            case .prepareTime:
-                cell.servingsButton.setTitle(result , for: .normal)
+                cell.cookTimeButton.setTitle(result, for: .normal)
+            case .servings:
+                cell.servingsButton.setTitle(result, for: .normal)
             default:
-                return
+                print("Not found correct Picker Type")
             }
-            
             sheetController.dismiss(animated: true, completion: nil)
         }
+        
     }
 }

@@ -31,7 +31,7 @@ class PickerViewController: UIViewController {
     func pickerHandler() {
         
         switch pickerType {
-        case .prepareTime:
+        case .cookTime:
             let font = UIFont.systemFont(ofSize: 20.0)
             let fontSize: CGFloat = font.pointSize
             let componentWidth: CGFloat = self.view.frame.width / CGFloat(picker.numberOfComponents)
@@ -59,16 +59,16 @@ class PickerViewController: UIViewController {
     @IBAction func doneButtonPressed(_ sender: UIButton) {
         
         switch pickerType {
-        case .prepareTime:
+        case .cookTime:
             if picker.selectedRow(inComponent: 0) != 0 && picker.selectedRow(inComponent: 1) != 0 {
                 pickerResult = "\(picker.selectedRow(inComponent: 0))h " +
-                    "\(picker.selectedRow(inComponent: 2))m "
+                    "\(picker.selectedRow(inComponent: 1))m "
             } else if picker.selectedRow(inComponent: 0) == 0 && picker.selectedRow(inComponent: 1) != 0 {
                 pickerResult = "\(picker.selectedRow(inComponent: 1))m "
             } else if picker.selectedRow(inComponent: 1) == 0 && picker.selectedRow(inComponent: 0) != 0{
                 pickerResult = "\(picker.selectedRow(inComponent: 0))h "
             }
-        case .cookTime:
+        case .servings:
             pickerResult = servingsCount[picker.selectedRow(inComponent: 0)]
         default:
             return
@@ -77,8 +77,6 @@ class PickerViewController: UIViewController {
         if let completed = isCompleted {
             completed(pickerResult)
         }
-        
-        
     }
 
 }
@@ -87,9 +85,9 @@ extension PickerViewController: UIPickerViewDelegate, UIPickerViewDataSource {
 
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         switch pickerType {
-        case .prepareTime:
-            return 2
         case .cookTime:
+            return 2
+        case .servings:
             return 1
         default:
             return 1
@@ -99,7 +97,7 @@ extension PickerViewController: UIPickerViewDelegate, UIPickerViewDataSource {
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
         switch pickerType {
         
-        case .prepareTime:
+        case .cookTime:
             switch (component) {
             case 0:
                 return 24
@@ -108,7 +106,7 @@ extension PickerViewController: UIPickerViewDelegate, UIPickerViewDataSource {
             default:
                 return 1
             }
-        case .cookTime:
+        case .servings:
             return servingsCount.count
         default:
             return 1
@@ -119,7 +117,7 @@ extension PickerViewController: UIPickerViewDelegate, UIPickerViewDataSource {
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
         switch pickerType {
         
-        case .prepareTime:
+        case .cookTime:
         switch (component) {
         case 0:
             return String(row)
@@ -128,7 +126,7 @@ extension PickerViewController: UIPickerViewDelegate, UIPickerViewDataSource {
         default:
             return "_"
             }
-        case .cookTime:
+        case .servings:
             return servingsCount[row]
         default:
             return "_"
