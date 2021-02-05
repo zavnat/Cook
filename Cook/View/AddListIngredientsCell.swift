@@ -7,10 +7,15 @@
 
 import UIKit
 
+protocol AddListIngredientsCellProtocol: class {
+    func deleteIngredient(_ cell: AddListIngredientsCell)
+}
+
 class AddListIngredientsCell: UITableViewCell {
 
     @IBOutlet weak var nameLabel: UILabel!
-    var indexPath: IndexPath!
+    var delegate: AddListIngredientsCellProtocol?
+//    var indexPath: IndexPath!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -21,6 +26,6 @@ class AddListIngredientsCell: UITableViewCell {
     }
 
     @IBAction func deleteButtonPressed(_ sender: UIButton) {
-        
+        delegate?.deleteIngredient(self)
     }
 }

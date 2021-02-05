@@ -33,7 +33,9 @@ class AddingViewController: UIViewController {
             switch num {
             case 0:
                 let cell = tableView.cellForRow(at: AddInfoCell.indexPath) as! AddInfoCell
-                name = cell.nameField.text
+                if let recipeName = cell.nameField.text, !recipeName.isEmpty {
+                    name = recipeName
+                }
             case 1:
                 print("")
             case 2:
@@ -104,7 +106,7 @@ extension AddingViewController: UITableViewDelegate, UITableViewDataSource, AddR
             let cell = tableView.dequeueReusableCell(withIdentifier: "AddListIngredientsCell", for:
                                                         indexPath) as! AddListIngredientsCell
             cell.nameLabel.text = ingredientsList[indexPath.row]
-            cell.indexPath = indexPath
+            cell.delegate = self
             return cell
         case 2:
             let cell = tableView.dequeueReusableCell(withIdentifier: "AddRecipeCell", for:
@@ -179,4 +181,16 @@ extension AddingViewController: UITableViewDelegate, UITableViewDataSource, AddR
         }
         
     }
+}
+
+extension AddingViewController: AddListIngredientsCellProtocol{
+    func deleteIngredient(_ cell: AddListIngredientsCell) {
+        guard let indexPath = tableView.indexPath(for: cell) else {return}
+        ingredientsList.remove(at: indexPath.row)
+        tableView.beginUpdates()
+        tableView.deleteRows(at: [indexPath], with: .fade)
+        tableView.endUpdates()
+    }
+    
+    
 }
